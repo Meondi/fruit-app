@@ -1,2 +1,2 @@
 # fruit-app
-Fruit Swift App and Vapor backend
+Fruit Swift App
