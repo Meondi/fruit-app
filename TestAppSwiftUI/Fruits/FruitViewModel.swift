@@ -13,7 +13,10 @@ class FruitViewModel: ObservableObject {
     @Published var fruits = [Fruit]()
     
     func getAllFruits() async {
-        let url = URL(string: "http://127.0.0.1:8080/fruits")!
+        guard let url = URL(string: "http://127.0.0.1:8080/fruits") else {
+            print("invalid URL")
+            return
+        }
         let urlSession = URLSession.shared
         do {
             let (data, _) = try await urlSession.data(from: url)
